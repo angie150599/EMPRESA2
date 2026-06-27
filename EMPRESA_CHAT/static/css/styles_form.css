@@ -1,0 +1,413 @@
+body {
+    margin: 0;
+    background: #000000;
+    font-family: 'poppins', sans-serif;
+    font-size: 16px;
+}
+
+/*  HEADER  */
+
+.header {
+    position: fixed;
+    width: 98%;
+    height: 10%;
+    top: -5px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: black;
+    border-bottom: 1px solid gold;
+
+    padding: 15px 15px;
+    z-index: 1;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+
+    background: conic-gradient(from var(--angulo), gold, yellow, gold, yellow, gold);
+    filter: blur(3px);
+    opacity: .8;
+
+    animation: girar 2s linear infinite;
+}
+
+/* LOGO */
+
+.logo { height: 70px; }
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand {
+    color: white;
+    font-weight: bold;
+}
+
+/* NAV */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.button a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.button:hover a {
+    border: 1px solid gold;
+    transform: scale(1.1);
+}
+
+/*  SLIDER  */
+
+.slider-box {
+    width: 97%;
+    height: 500px;
+    margin: 8% 0 0 20px;
+    overflow: hidden;
+}
+
+.slider-box ul {
+    display: flex;
+    padding: 0;
+    width: 100%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-box li {
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.slider-box img {
+    height: 500px;
+    width: 1875px;
+}
+
+.text {
+    position: absolute;
+    text-align: center;
+    font-size: xx-large;
+    top: 90px;
+    color: gold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
+}
+
+.text h2 {
+    font-size: 45px;
+    margin-bottom: 35px;
+}
+
+.text p {
+    margin: 0 150px;
+    font-weight: bold;
+}
+
+/*  ABOUT  */
+
+.about {
+    background-color: gold;
+    color: #000000;
+    font-size: 20px;
+    width: 90%;
+    height: 250px;
+    margin: auto;
+    padding: 2%;
+    border: 10px double #353535;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.about p {
+    text-align: justify;
+}
+
+/*  HISTORY  */
+
+.history {
+    white-space: pre-line;
+    position: relative;
+    display: flex;
+    color: #FFFFFF;
+    font-size: 18px;
+    border: 1px dashed gold;
+    padding: 3%;
+    align-items: center;
+    width: 70%;
+    margin-top: 10%;
+    margin-bottom: -20%;
+    margin-left: 1%;
+}
+
+.history::before,
+.history::after {
+    content: "";
+    position: absolute;
+    margin-left: -2%;
+    width: 20%;
+    height: 90%;
+    z-index: -1;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+
+.history::before {
+    background: conic-gradient(from var(--angulo), gold, yellow, gold, yellow, gold);
+    opacity: 0.6;
+    animation: girar 2s linear infinite;
+    filter: blur(20px);
+}
+
+/*  IMAGEN  */
+
+.bh img {
+    height: 23%;
+    width: 23%;
+    border: 1px solid gold;
+    position: relative;
+    top: -40px;
+    left: 76%;
+}
+
+/*  BLOQUES  */
+
+.bloque {
+    position: relative;
+    margin-top: 10%;
+}
+
+.ve {
+    position: relative;
+    width: 70%;
+    height: 220px;
+    background: #353535;
+    border: 3px double gold;
+    margin: 5% auto;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+}
+
+/* glow animado */
+@property --angulo {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.ve::before,
+.ve::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: conic-gradient(from var(--angulo), gold, yellow, gold, yellow, gold);
+    border-radius: 5px;
+    animation: girar 2s linear infinite;
+}
+
+.ve::after {
+    margin-top: -15%;
+    z-index: -1;
+    filter: blur(10px);
+}
+
+/* ajustes específicos */
+#vi::before, #vi::after,
+#contact::after,
+#redes::before,
+#redes::after {
+    filter: blur(10px);
+}
+
+/* redes */
+#redes {
+    margin-top: -5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#redes a img {
+    width: 70px;
+}
+
+/*  ANIMACIONES  */
+
+@keyframes girar {
+    0% { --angulo: 0deg; }
+    100% { --angulo: 360deg; }
+}
+
+@keyframes slide {
+    0%, 5% { margin-left: 0%; }
+    25%, 50% { margin-left: -103%; }
+    75%, 100% { margin-left: -203%; }
+}
+
+
+#contenedor,
+#contenedor2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+#contenedor.visible {
+    animation: aparecer 1.5s ease-out forwards;
+}
+
+#contenedor2.visible {
+    animation: aparecer2 1.5s ease-out forwards;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateX(-100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes aparecer2 {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/*  BOT  */
+
+.bot {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 30px;
+    padding: 40px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/*  FOOTER  */
+
+footer {
+    position: relative;
+    height: 50px;
+    background-color: #000000;
+    font-size: 20px;
+    color: #FFFFFF;
+    border-top: 3px dotted gold;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    width: 100%;
+    height: 3px;
+
+    background: conic-gradient(from var(--angulo), gold, yellow, gold, yellow, gold);
+    filter: blur(3px);
+    opacity: .8;
+
+    animation: girar 2s linear infinite;
+}
+
+/*  FORMULARIO  */
+
+.form-container {
+    background: #353535;
+    color: #ffffff;
+    padding: 25px;
+    max-width: 520px;
+
+    margin: 120px auto 60px auto;
+
+    border: 2px solid gold;
+    border-radius: 10px;
+
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.form-title {
+    text-align: center;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+
+    background: #1f1f1f;
+    color: #ffffff;
+
+    border: 1px solid gold;
+    border-radius: 6px;
+
+    box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: yellow;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.form-button {
+    width: 100%;
+    padding: 12px;
+
+    background: black;
+    color: gold;
+
+    border: 2px solid gold;
+    border-radius: 6px;
+
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.form-button:hover {
+    background: gold;
+    color: black;
+}
+
+#submitButton {
+    font-weight: bold;
+}
